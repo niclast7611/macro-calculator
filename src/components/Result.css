@@ -1,0 +1,33 @@
+#result-container {
+text-align: center;
+margin-top: 75px;
+}
+
+#ind-macros{
+    display: inline-block; 
+    margin:20px 20px;
+
+}
+#icons{
+    font-size: 40px;
+}
+
+h2{
+    font-size:30px;
+}
+
+#protein{
+    border-bottom: 4px solid #ADD8E6;
+}
+
+#carbs{
+    border-bottom: 4px solid red;
+}
+
+#fat{
+    border-bottom: 4px solid #fec20c;
+}
+
+#calories{
+    border-bottom: 4px solid #90EE90;
+}
