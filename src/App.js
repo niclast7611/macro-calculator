@@ -4,11 +4,28 @@ import Result from './components/Result.js';
 import './App.css'; 
 
 export default class App extends Component {
-  render() {
-    return (
+constructor(props){
+  super(props)
+  this.state = {
+    protein: '',
+    fat: '',
+    carbs: '',
+    calories: '',
+  }
+}
+callbackFunction = (childData) => {
+  this.setState({protein: childData})
+}
+  
+  render() {  
+   return (
       <>
-      <Macro />
-      <Result />
+      <Macro newPerson={this.newPerson}/>
+      <Result 
+      protein={this.protein} 
+      carbs={this.carbs} 
+      fat={this.fat} 
+      calories={this.calories} />
       </>
     )
   }
