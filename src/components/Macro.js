@@ -1,4 +1,5 @@
-import React, { Component } from 'react'
+
+import { useState } from 'react';
 import {
   Button, 
   Form,
@@ -7,8 +8,26 @@ import {
   Input} from 'reactstrap';
   import './Macro.css'; 
 
-export default class Macro extends Component {
-  render() {
+const Macro = () => {
+
+  const[age, setAge] = useState('');
+  const[gender, setGender] = useState('');
+  const[height, setHeight] = useState('');
+  const[weight, setWeight] = useState('');
+  const[activity, setActivity] = useState('');
+  const[goal, setGoal] = useState('');
+  const[protein, setProtein] = useState(0);
+  const[fat, setFat] = useState(0);
+  const[carb, setCarb] = useState(0);
+  const[calorie, setCalorie] = useState(0);
+
+let equation = (e) => {
+  e.preventDefault()
+
+   setProtein(2)
+}
+
+console.log(protein)
     return (
     <div className='card'>
 
@@ -21,25 +40,30 @@ export default class Macro extends Component {
             <Input
               id="Age"
               name="Age"
-              placeholder="25"
               type="text"
+              onChange={e => setAge(e.target.value)}
+              value={age}
             />
           </FormGroup>
           <FormGroup id='inputs'>
             <Input
               id="gender-male"
-              name="gender-male"
+              name="gender"
               placeholder="Male"
               type="radio"
+              onClick={() => setGender('male')}
+              value={gender}
             /> 
             <Label for="gender-male" id='labels-right'>
             Male
           </Label>
             <Input
               id="gender-female"
-              name="gender-female"
+              name="gender"
               placeholder="Female"
               type="radio"
+              onClick={() => setGender('female')}
+              value={gender}
             /> 
             <Label for="gender-female" id='labels-right'>
             Female
@@ -51,15 +75,11 @@ export default class Macro extends Component {
             </Label>
             <Input
               id="height"
-              name="feet"
-              placeholder="feet"
-              type="text"
-            />
-            <Input
-              id="height"
-              name="inches"
+              name="height"
               placeholder="inches"
               type="text"
+              onChange={e => setHeight(e.target.value)}
+              value={height}
             />
           </FormGroup>
           <FormGroup id='inputs'>
@@ -71,6 +91,8 @@ export default class Macro extends Component {
               name="pounds"
               placeholder="pounds"
               type="text"
+              onChange={e => setWeight(e.target.value)}
+              value={weight}
             />
           </FormGroup>
           <FormGroup id='inputs'>
@@ -81,6 +103,8 @@ export default class Macro extends Component {
               id="activty"
               name="activty"
               type="select"
+              onChange={e => setActivity(e.target.value)}
+              value={activity}
             >
           <option>
             No exercise
@@ -107,6 +131,8 @@ export default class Macro extends Component {
               id="goal"
               name="goal"
               type="select"
+              onChange={e => setGoal(e.target.value)}
+              value={goal}
             >
           <option>
             Maintain Weight
@@ -119,11 +145,11 @@ export default class Macro extends Component {
           </option>
           </Input>
           </FormGroup>
-          <Button>
+          <Button onSubmit={equation}>
             Calculate
           </Button>
         </Form>
       </div>
     )
   }
-}
+  export default Macro
