@@ -1,0 +1,26 @@
+.card{
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5%;
+    
+}
+
+#inputs{
+    padding: 10px;
+    
+}
+#labels-left{
+    margin-right: 5px;
+}
+#labels-right{
+    margin-left: 5px;
+    margin-right: 5px;
+}
+#form{
+    border: 2px solid black;
+    border-radius: 15%;
+    padding: 25px;
+    
+}
